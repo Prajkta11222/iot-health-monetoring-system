@@ -31,6 +31,7 @@ services:
   # ──────────────────────────────────────────────
   - type: web
     name: smart-health-backend
+    plan: free
     runtime: node
     rootDir: backend
     buildCommand: npm install
@@ -44,7 +45,7 @@ services:
       - key: MONGO_URI
         sync: false  # Set manually — MongoDB Atlas connection string
       - key: FASTAPI_URL
-        value: http://smart-health-ml:8000  # Render private-service internal DNS
+        value: https://smart-health-ml.onrender.com  # Public Render URL of the ML web service
       - key: DEVICE_API_KEY
         sync: false  # Set manually
       - key: JWT_SECRET
@@ -53,16 +54,17 @@ services:
         sync: false  # Set manually — URL of the frontend static site
 
   # ──────────────────────────────────────────────
-  # 3. ML Service — FastAPI Private Service
-  #    Only reachable by other Render services via
-  #    internal DNS: http://smart-health-ml:8000
+  # 3. ML Service — FastAPI Web Service (Free Tier)
+  #    Reachable via public URL: https://smart-health-ml.onrender.com
   # ──────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: smart-health-ml
+    plan: free
     runtime: python
     rootDir: ml-service
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
     envVars:
       - key: PORT
         value: 8000
