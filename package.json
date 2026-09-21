@@ -1,0 +1,9 @@
+{
+  "name": "smart-health-monitoring-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IoT Smart Health Monitoring System",
+  "scripts": {
+    "start": "python -X utf8 start.py"
+  }
+}

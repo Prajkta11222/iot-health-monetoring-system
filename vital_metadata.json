@@ -1,0 +1,17 @@
+{
+  "model_version": "1.0",
+  "features": [
+    "Heart Rate (bpm)",
+    "SpO2 Level (%)",
+    "Body Temperature (\u00b0C)"
+  ],
+  "classes": [
+    "HIGH",
+    "LOW"
+  ],
+  "target": "risk_level",
+  "label_definition": "HIGH if any source vital alert is ABNORMAL; otherwise LOW",
+  "dataset_size": 60000,
+  "model": "RandomForestClassifier",
+  "random_state": 42
+}

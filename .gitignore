@@ -1,0 +1,60 @@
+# ── Secrets & environment ──
+.env
+*.env
+.env.*
+!.env.example
+
+# ── Dependencies ──
+node_modules/
+
+# ── Python virtual environments ──
+.venv/
+venv/
+env/
+ENV/
+
+# ── Python bytecode / cache ──
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ── Build output ──
+dist/
+build/
+*.egg-info/
+
+# ── Logs ──
+logs/
+*.log
+
+# ── Secrets / credentials ──
+credentials/
+*MONGO_URI*
+*.secret
+*.key
+*.pem
+
+# ── PlatformIO artifacts ──
+.pio/
+
+# ── IDE / editor files ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── ML model files (general exclude) ──
+ml-service/models/*.pkl
+
+# ── Keep required model files tracked ──
+!ecg_risk_model.pkl
+!vital_risk_model.pkl
+!trained_model/ecg_risk_model.pkl
+
+# ── Test / scratch outputs ──
+*_out.txt
+*_result.txt

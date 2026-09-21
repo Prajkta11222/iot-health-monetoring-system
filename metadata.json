@@ -1,0 +1,20 @@
+{
+  "model": "RandomForestClassifier",
+  "version": "1.0",
+  "input_samples": 187,
+  "sampling_rate_hz": 125,
+  "target": "risk_level",
+  "labels": {
+    "0": "LOW",
+    "1": "HIGH"
+  },
+  "original_mapping": {
+    "0": "LOW",
+    "1": "HIGH",
+    "2": "HIGH",
+    "3": "HIGH",
+    "4": "EXCLUDED"
+  },
+  "random_state": 42,
+  "note": "ECG abnormality/research-risk classification, not medical diagnosis."
+}
