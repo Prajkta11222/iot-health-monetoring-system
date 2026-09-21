@@ -40,8 +40,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 4000
       - key: MONGO_URI
         sync: false  # Set manually — MongoDB Atlas connection string
       - key: FASTAPI_URL
