@@ -14,6 +14,8 @@ try {
 const port = Number(process.env.PORT || 4000);
 const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/smart-health';
 
+createApp().listen(port, '0.0.0.0', () => console.log(`Smart Health API listening on 0.0.0.0:${port}`));
+
 try {
   console.log('Connecting to MongoDB...');
   await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 5000 });
@@ -30,6 +32,3 @@ try {
     console.error(`❌ Database connection error: ${localErr.message}`);
   }
 }
-
-
-createApp().listen(port, '0.0.0.0', () => console.log(`Smart Health API listening on 0.0.0.0:${port}`));
