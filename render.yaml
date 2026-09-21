@@ -24,7 +24,7 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        sync: false  # Set manually in Render dashboard
+        value: https://smart-health-backend.onrender.com/api
 
   # ──────────────────────────────────────────────
   # 2. Backend — Node.js Express API
@@ -51,7 +51,7 @@ services:
       - key: JWT_SECRET
         generateValue: true  # Render auto-generates a strong random value
       - key: CLIENT_ORIGIN
-        sync: false  # Set manually — URL of the frontend static site
+        value: https://smart-health-frontend.onrender.com
 
   # ──────────────────────────────────────────────
   # 3. ML Service — FastAPI Web Service (Free Tier)
